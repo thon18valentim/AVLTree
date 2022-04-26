@@ -2,12 +2,20 @@ from avlTree import AVLTree
 
 myTree = AVLTree()
 root = None
-nums = [33, 13, 52, 9, 21, 61, 8, 11]
-for num in nums:
-    root = myTree.insert_node(root, num)
-myTree.printHelper(root, "", True)
-key = 13
-root = myTree.delete_node(root, key)
-print("After Deletion: ")
-myTree.printHelper(root, "", True)
-print("OK")
+
+while True:
+
+    print("\n--- Bem vindo ao sistema AVL tree ---")
+    print("\n(1) Cadastrar Novo Nó\n(2) Remover Nó\n(3) Exibir árvore\n(0) Fechar sistema\n")
+    r = int(input("R.: "))
+
+    if(r == 0):
+        break
+    elif(r == 1):
+        v = int(input("\nValor: "))
+        root = myTree.insert_node(root, v)
+    elif(r == 2):
+        v = int(input("\nRemover Nó (Valor): "))
+        root = myTree.delete_node(root, v)
+    elif(r == 3):
+        myTree.printHelper(root, "", True)
